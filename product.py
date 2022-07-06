@@ -6,7 +6,6 @@ class Product():
         self.name = name
         self.price = price
         self.qty = qty
-        self.add_product()
 
     def add_product(self):
         db = add_db("PRODUCT")

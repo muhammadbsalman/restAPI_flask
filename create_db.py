@@ -18,3 +18,5 @@ class add_db():
         except Exception as e:
             print(e)
             #print("{0} PROBLEM EXECUTING!".format(self.sql_statement))
+        
+        return my_cursor
