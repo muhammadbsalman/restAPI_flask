@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from flask_sqlalchemy import SQLAlchemy
 from product import Product
 from create_db import add_db
@@ -17,17 +17,21 @@ db = SQLAlchemy(app)
 
 @app.route("/", methods = ['GET'])
 def home():
-  return jsonify(msg="Hello world!")
+  return jsonify(msg="Please add your products at /product")
 
-#Add product
+#Add product to db
 @app.route("/product", methods = ['POST'])
 def product_info():
   name = request.json['name']
   price = request.json['price']
   qty = request.json['qty']
-  #new_product = Product(name, price, qty)
+  
+  new_product = Product(name, price, qty)
+  
+  resp = jsonify(msg="{0} added to database".format(name))
+  return make_response(resp, 200)
 
-
+#Create Product DB and Table
 def db_object():
     database = add_db("PRODUCT")
     database.execute_query('CREATE DATABASE PRODUCT')
@@ -38,5 +42,4 @@ def db_object():
 #Run Server
 if __name__ == '__main__':
     db_object()
-    new_product = Product("hello", 1,1)
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)
