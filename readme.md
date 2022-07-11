@@ -9,8 +9,8 @@ Requirements
 ---
 * [Ubuntu server on Windows](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview) - _follow this guide for installing Linux Server on Windows_ (**Windows Only**)  
 * [Python 3](https://www.python.org/downloads/) (`sudo apt install python3` - **Linux**)
-* [pipenv] (`pip install --user pipenv` - **Linux**)
-* [mySQL server] (`sudo apt install mysql-server` - **Linux**)
+* pipenv (`pip install --user pipenv` - **Linux**)
+* mySQL server (`sudo apt install mysql-server` - **Linux**)
 
 Cloning Repo
 ---
@@ -26,6 +26,6 @@ Running a Simulation
    * `python3 app.py`
 4. Use POSTMAN to test the following endpoints
    * `POST @ 127.0.0.1:5000/product`
-      *`{"name":"string", "price":int, "qty":int}`
+   *`Payload resembles the following: {"name":"string", "price":int, "qty":int}`
    * `GET @ 127.0.0.1:5000/product` 
 ---
