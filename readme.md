@@ -26,6 +26,6 @@ Running a Simulation
    * `python3 app.py`
 4. Use POSTMAN to test the following endpoints
    * `POST @ 127.0.0.1:5000/product`
-   *`Payload resembles the following: {"name":"string", "price":int, "qty":int}`
+   * `Payload resembles the following: {"name":"string", "price":int, "qty":int}`
    * `GET @ 127.0.0.1:5000/product` 
 ---
